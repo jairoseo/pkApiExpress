@@ -35,7 +35,7 @@ function url(req){
 /**
  * Ruta Inicial
  * @http GET
-  */
+*/
 app.get("/", (req, res) => {
     let urlActual = url(req);
     let enlaces = {
