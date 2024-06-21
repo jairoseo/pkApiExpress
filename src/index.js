@@ -85,6 +85,19 @@ app.get("/pokemon/:nombre", async (req, res) => {
 });
 
 /**
+ * Seguridad Simple
+ * Para evitar ejecuciones no autorizadas
+*/
+app.use((req, res, next) => {
+    const authToken = req.headers["authorization"];
+    if(authToken === 'miTokenSecreto123'){
+        next();
+    }else{
+        res.status(401).send("Acceso no autorizado");
+    }
+});
+
+/**
  * Crear Pokemon
  * Todos los campos son necesarios
  * @http POST
