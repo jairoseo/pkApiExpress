@@ -21,7 +21,7 @@ const pokemonSchema = new mongoose.Schema({
     nombre: String,
     tipo: String,
     habilidad: String,
-  });
+    });
 
 const Pokemon = mongoose.model("Pokemon", pokemonSchema);
 
@@ -163,7 +163,7 @@ app.delete("/delPokemon/:id", async (req, res) => {
     try {
         const pokemon = await Pokemon.findByIdAndDelete(req.params.id);
         if(pokemon){
-            res.status(204).send("Pokemon Eliminado");
+            res.status(200).send("Pokemon Eliminado");
         }else{
             res.status(404).send("Pokemon no encontrado");
         }
