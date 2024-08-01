@@ -1,0 +1,24 @@
+meta {
+  name: Crear Pokemon
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:3000/addPokemon
+  body: json
+  auth: none
+}
+
+headers {
+  authorization: miTokenSecreto123
+}
+
+body:json {
+  {
+    "numero" : 132,
+    "nombre" : "ditto",
+    "tipo" : "normal",
+    "habilidad" : "imposter"
+  }
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Editar Pokemon
+  type: http
+  seq: 5
+}
+
+put {
+  url: http://localhost:3000/editPokemon/66ab1d06224bbda1d5fb560b
+  body: json
+  auth: none
+}
+
+headers {
+  authorization: miTokenSecreto123
+}
+
+body:json {
+  {
+    "numero" : 132,
+    "nombre" : "Ditto",
+    "tipo" : "Normal",
+    "habilidad" : "Impostor"
+  }
+}
